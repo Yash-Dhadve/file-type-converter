@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>404 – Lightning Labs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at top, #1b1f3b, #050510);
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 600px;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 6rem;
+      margin: 0;
+      color: #ffd700;
+      text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+      animation: flicker 2s infinite;
+    }
+
+    h2 {
+      margin-top: 10px;
+      font-weight: 700;
+    }
+
+    p {
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+
+    .bolt {
+      font-size: 5rem;
+      animation: zap 1.2s infinite;
+      margin: 20px 0;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 28px;
+      background: #ffd700;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    a:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+
+    /* Animations */
+    @keyframes zap {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      45% { opacity: 0.8; }
+      50% { opacity: 0.4; }
+      55% { opacity: 0.9; }
+      100% { opacity: 1; }
+    }
+
+    /* Lightning flash effect */
+    .flash {
+      position: absolute;
+      inset: 0;
+      background: white;
+      opacity: 0;
+      pointer-events: none;
+      animation: flash 6s infinite;
+    }
+
+    @keyframes flash {
+      0%, 95%, 100% { opacity: 0; }
+      96% { opacity: 0.8; }
+      97% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flash"></div>
+
+  <div class="container">
+    <div class="bolt">⚡</div>
+    <h1>404</h1>
+    <h2>Oops… That Page Got Struck by Lightning</h2>
+    <p>
+      Even at <strong>Lightning Labs</strong>, not everything survives a power surge.
+      The page you’re looking for has either moved, vanished, or been vaporized.
+    </p>
+
+    <a href="/">Return to Base ⚡</a>
+
+    <div class="footer">
+      Lightning Labs © <span id="year"></span> — Science was involved.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
